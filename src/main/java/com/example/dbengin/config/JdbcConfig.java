@@ -26,7 +26,7 @@ import java.util.Optional;
 
 @Configuration
 //@EnableJdbcRepositories
-public class ApplicationConfig extends AbstractJdbcConfiguration {
+public class JdbcConfig extends AbstractJdbcConfiguration {
 
     //用Repository操作时，底层会用EntityRowMapper来映射数据库和JavaBean属性值，如果类型不一致且没有转换器会报异常
     @Bean

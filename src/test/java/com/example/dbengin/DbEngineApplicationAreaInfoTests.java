@@ -38,7 +38,7 @@ class DbEngineApplicationAreaInfoTests {
 
     @Test
     void test3() {
-        List<AreaInfoPO> all = areaInfoRepository.findAllByAreaLevel3(1, "湖北");
+        List<AreaInfoPO> all = areaInfoRepository.findAllByAreaLevelWithAlias(1, "湖北");
         System.out.println("");
     }
 
