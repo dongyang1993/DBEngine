@@ -1,7 +1,8 @@
 package com.example.dbengin;
 
 import com.example.dbengin.bean.po.AreaInfoPO;
-import com.example.dbengin.storage.AreaInfoRepository;
+import com.example.dbengin.dao.AreaInfoDao;
+import com.example.dbengin.repository.AreaInfoRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import java.util.List;
+import java.util.Optional;
 
 @SpringBootTest
 class DbEngineApplicationAreaInfoTests {
@@ -32,7 +34,7 @@ class DbEngineApplicationAreaInfoTests {
 
     @Test
     void test2() {
-        List<AreaInfoPO> all = areaInfoRepository.getAllByAreaLevel(1);
+        List<AreaInfoPO> all = areaInfoRepository.getAllByAreaLevelAndParentId(2, 110000);
         System.out.println("");
     }
 
@@ -44,7 +46,26 @@ class DbEngineApplicationAreaInfoTests {
 
     @Test
     void test4() {
-        List<AreaInfoPO> all = areaInfoRepository.findAllByAreaLevel4(1);
+        List<AreaInfoPO> all = areaInfoRepository.findAllByAreaLevelWithoutAlias(1);
+        System.out.println("");
+    }
+
+    @Test
+    void test5() {
+        Optional<AreaInfoPO> infoPO = areaInfoRepository.findById(1);
+        System.out.println("");
+    }
+
+
+    @Test
+    void test7() {
+        List<AreaInfoPO> pos = areaInfoRepository.findByName("湖");
+        System.out.println("");
+    }
+
+    @Test
+    void test8() {
+        List<AreaInfoPO> pos = areaInfoRepository.findByName2("湖");
         System.out.println("");
     }
 

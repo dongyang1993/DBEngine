@@ -1,4 +1,4 @@
-package com.example.dbengin.storage;
+package com.example.dbengin.repository;
 
 import com.example.dbengin.bean.po.DcInfoPO;
 import org.springframework.data.jdbc.repository.query.Query;

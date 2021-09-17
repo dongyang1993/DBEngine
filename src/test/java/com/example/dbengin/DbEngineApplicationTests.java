@@ -1,7 +1,7 @@
 package com.example.dbengin;
 
 import com.example.dbengin.bean.po.DcInfoPO;
-import com.example.dbengin.storage.DcInfoRepository;
+import com.example.dbengin.repository.DcInfoRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
