@@ -5,6 +5,7 @@ import com.example.dbengin.dao.AreaInfoDao;
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 
 import java.util.List;
 
@@ -31,7 +32,9 @@ public interface AreaInfoRepository extends PagingAndSortingRepository<AreaInfoP
             """)
     List<AreaInfoPO> findAllByAreaLevelWithoutAlias(int areaLevel);
 
-//    @Query(value = "", rowMapperClass = BeanPropertyRowMapper.class)
-//    AreaInfoPO findById();
+    @Query(value = """
+            select * from area_info where name like concat(:name, '%')
+            """)
+    List<AreaInfoPO> findByName10(String name);
 
 }

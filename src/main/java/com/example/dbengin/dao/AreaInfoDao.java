@@ -9,4 +9,7 @@ public interface AreaInfoDao {
     List<AreaInfoPO> findByName(String name);
 
     List<AreaInfoPO> findByName2(String name);
+
+    List<AreaInfoPO> findByCondition(AreaInfoPO po);
+
 }

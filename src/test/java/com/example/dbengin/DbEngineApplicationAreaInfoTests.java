@@ -1,7 +1,6 @@
 package com.example.dbengin;
 
 import com.example.dbengin.bean.po.AreaInfoPO;
-import com.example.dbengin.dao.AreaInfoDao;
 import com.example.dbengin.repository.AreaInfoRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,6 +65,20 @@ class DbEngineApplicationAreaInfoTests {
     @Test
     void test8() {
         List<AreaInfoPO> pos = areaInfoRepository.findByName2("湖");
+        System.out.println("");
+    }
+
+    @Test
+    void test9() {
+        List<AreaInfoPO> pos = areaInfoRepository.findByName10("湖");
+        System.out.println("");
+    }
+
+    @Test
+    void test10() {
+        AreaInfoPO po = new AreaInfoPO();
+        po.setName("湖北省");
+        List<AreaInfoPO> pos = areaInfoRepository.findByCondition(po);
         System.out.println("");
     }
 
